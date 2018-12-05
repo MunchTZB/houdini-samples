@@ -1,5 +1,6 @@
 class CheckerboardPainter {
   paint(ctx, geom, properties) {
+    console.log(arguments[2]);
     // Use `ctx` as if it was a normal canvas
     const colors = ['red', 'green', 'blue'];
     const size = 32;

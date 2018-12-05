@@ -1,0 +1,38 @@
+<!doctype html>
+<style>
+  html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  div {
+    --particle-item: 123;
+    --particle-count: 1;
+    --particle-frequency: 2;
+
+    background-image: none;
+  }
+
+  div:hover {
+    background-image: paint(particle);
+  }
+</style>
+<div>
+  twinkle star
+</div>
+<script>
+  if (location.protocol === 'http:' && location.hostname !== 'localhost')
+    location.protocol = 'https:';
+  if ('paintWorklet' in CSS) {
+    CSS.paintWorklet.addModule('index.js');
+  } else {
+    document.body.innerHTML = 'You need support for <a href="https://drafts.css-houdini.org/css-paint-api/">CSS Paint API</a> to view this demo :(';
+  }
+</script>
