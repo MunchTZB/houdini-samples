@@ -8,6 +8,8 @@ registerPaint('particle', class {
     }
 
     paint(ctx, geom, properties) {
-        console.log(123);
+        console.log(ctx);
+        console.log(geom);
+        console.log(properties.get('--particle-item'));
     }
 });

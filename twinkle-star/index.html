@@ -13,21 +13,27 @@
   }
 
   div {
-    --particle-item: 123;
+    --particle-item: url('./1.png');
     --particle-count: 1;
     --particle-frequency: 2;
 
-    background-image: none;
-  }
-
-  div:hover {
     background-image: paint(particle);
   }
+
+  /* div:hover {
+    background-image: paint(particle);
+  } */
 </style>
 <div>
   twinkle star
 </div>
 <script>
+  CSS.registerProperty({
+    name: '--particle-item',
+    syntax: '<image>',
+    inherits: false,
+    initialValue: 'url()',
+  })
   if (location.protocol === 'http:' && location.hostname !== 'localhost')
     location.protocol = 'https:';
   if ('paintWorklet' in CSS) {
